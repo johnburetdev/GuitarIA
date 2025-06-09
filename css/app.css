@@ -4,18 +4,155 @@
     --blanco: #FFF;
     --fuente-principal: 'Outfit', sans-serif;
 }
+
 html {
     font-size: 62.5%;
     box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
+
 body {
     font-size: 2rem;
     font-family: var(--fuente-principal);
     line-height: 1.5;
 }
+
 img {
     max-width: 100%;
+}
+
+[class$="__contenedor"] {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.header {
+    background-image: linear-gradient(to right, rgb(0 0 0 /.7), rgb(0 0 0 / .7)),
+        url(../img/header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    padding: 5rem 0;
+    position: relative;
+}
+
+.header__guitarra {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .header__guitarra {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        animation-name: mostrarImagen;
+        animation-duration: 1s;
+    }
+}
+
+@keyframes mostrarImagen {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
+.header__barra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .header__barra {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.header__logo {
+    width: 30rem;
+}
+
+.navegacion {
+    display: flex;
+    gap: 2rem;
+    margin-top: 5rem;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .navegacion {
+        margin-top: 0;
+    }
+
+}
+
+.navegacion__enlace {
+    color: var(--blanco);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: .5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    transition-property: background-color;
+    transition-duration: .3s;
+}
+
+.navegacion__enlace:hover {
+    background-color: var(--primary);
+}
+
+.modelo {
+    color: var(--blanco);
+    margin-top: 5rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .modelo {
+        text-align: left;
+        width: 50%;
+    }
+}
+
+.modelo__nombre {
+    font-size: 8rem;
+}
+
+.modelo__precio {
+    font-size: 6rem;
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 0;
+}
+
+.modelo__enlace {
+    text-decoration: none;
+    border: 1px solid var(--primary);
+    font-size: 1.4rem;
+    padding: 1rem 5rem;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    color: var(--blanco);
+    transition-property: background-color;
+    transition-duration: .3s;
+}
+
+.modelo__enlace:hover {
+    background-color: var(--primary);
 }
