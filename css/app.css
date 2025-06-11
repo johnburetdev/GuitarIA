@@ -226,6 +226,43 @@ img {
     color: var(--blanco);
 }
 
+.producto__label {
+    margin-right: 1rem;
+    font-size: 2.2rem;
+}
+
+.producto__cantidad {
+    border: 2px solid var(--primary);
+    padding: 1rem;
+}
+
+.producto__cantidad:focus-visible {
+    border: none;
+    outline: 2px solid var(--primary);
+}
+
+.producto__agregar-carrito {
+    margin-top: 6rem;
+    display: block;
+    background-color: var(--primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    text-align: center;
+    padding: 2rem 5rem;
+    color: var(--blanco);
+    font-size: 1.6rem;
+    font-weight: 700;
+    transition-property: background-color;
+    transition-duration: .3s;
+
+}
+
+.producto__agregar-carrito:hover {
+    background-color: var(--negro);
+    cursor: pointer;
+}
+
 .cursos {
     background-image: linear-gradient(to right, rgb(0 0 0 /.65), rgb(0 0 0 / .65)),
         url(../img/cursos_bg.jpg);
